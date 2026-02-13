@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAMALIEF KINDERCENTRUM - Premium Kinderopvang</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'mamalief-red': 'rgb(240, 128, 128)',
+                        'mamalief-green': 'rgb(152, 251, 152)',
+                        'mamalief-blue': 'rgb(173, 216, 230)',
+                        'mamalief-yellow': 'rgb(255, 255, 153)',
+                        'mamalief-purple': 'rgb(186, 85, 211)',
+                        'mamalief-pink': 'rgb(199, 21, 133)',
+                        'sand': 'rgb(244, 236, 224)',
+                        'terracotta': 'rgb(204, 142, 124)',
+                        'sage': 'rgb(147, 169, 147)',
+                        'anthracite': '#0F172A',
+                        'warm-white': '#FCFCFA'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'display': ['Outfit', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'soft': '0 20px 50px rgba(0, 0, 0, 0.05)',
+                        'soft-purple': '0 20px 50px rgba(186, 85, 211, 0.1)',
+                        'soft-green': '0 20px 50px rgba(152, 251, 152, 0.1)',
+                        'soft-blue': '0 20px 50px rgba(173, 216, 230, 0.1)',
+                        'colored': '0 10px 40px rgba(186, 85, 211, 0.15)',
+                        'glow': '0 0 30px -5px rgba(168, 85, 247, 0.4)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .animate-delay-200 {
+            animation-delay: 0.2s;
+            opacity: 0;
+        }
+        
+        .animate-delay-400 {
+            animation-delay: 0.4s;
+            opacity: 0;
+        }
+        
+        .glass-morphism {
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .hover-lift {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-8px);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #1E293B 0%, #475569 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-700 bg-warm-white">
+    <!-- Premium Glassmorphism Navigation -->
+    <nav class="fixed top-0 z-50 w-full glass-morphism border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-3">
+                    <img src="./logo-mamelief.png" alt="MAMALIEF KINDERCENTRUM Logo" class="h-16">
+                </a>
+
+                <!-- Navigation Links -->
+                <div class="hidden lg:flex items-center space-x-10">
+                    <a href="#over-ons" class="text-slate-600 hover:text-anthracite transition-colors text-sm font-medium">Over Ons</a>
+                    <a href="#groepen" class="text-slate-600 hover:text-anthracite transition-colors text-sm font-medium">Onze Groepen</a>
+                    <a href="#visie" class="text-slate-600 hover:text-anthracite transition-colors text-sm font-medium">Visie</a>
+                    <a href="#tarieven" class="text-slate-600 hover:text-anthracite transition-colors text-sm font-medium">Tarieven</a>
+                    <a href="#contact" class="text-slate-600 hover:text-anthracite transition-colors text-sm font-medium">Contact</a>
+                </div>
+
+                <!-- Premium Buttons -->
+                <div class="flex items-center space-x-4">
+                    <button class="hidden md:block px-5 py-2.5 text-slate-600 border border-slate-200 rounded-xl hover:bg-slate-50 transition-all duration-300 text-sm font-medium">
+                        Ouderportaal
+                    </button>
+                    <button class="px-6 py-2.5 bg-purple-600 text-white rounded-xl hover:bg-purple-700 transition-all duration-300 text-sm font-medium shadow-lg shadow-purple-500/30">
+                        Plan een Rondleiding
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Premium Hero Section with Arch Shape -->
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <!-- Radial Gradient Background -->
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(254,240,138,0.5))_via-slate-50_to-white]"></div>
+        <div class="absolute inset-0 opacity-30">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-mamalief-purple/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-mamalief-green/10 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="relative max-w-7xl mx-auto px-6 lg:px-8 pt-32 lg:pt-36">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-6">
+                    <div class="animate-fade-in-up">
+                        <div class="inline-flex items-center px-4 py-2 bg-mamalief-purple/10 border border-mamalief-purple/20 rounded-full text-sm font-medium text-mamalief-purple mb-8">
+                            <span class="w-2 h-2 bg-mamalief-purple rounded-full mr-2"></span>
+                            Premium Kinderopvang in Utrecht
+                        </div>
+                        <h1 class="font-display text-4xl lg:text-5xl xl:text-6xl font-bold text-anthracite mb-6 leading-tight tracking-tighter">
+                            Een warme, professionele start voor jouw kind
+                        </h1>
+                        <p class="text-xl text-slate-600 leading-relaxed max-w-lg">
+                            Bij Kindercentrum Mamalief bieden we een veilige, liefdevolle en stimulerende omgeving waar kinderen zich optimaal kunnen ontwikkelen. Ons team van gediplomeerde professionals zorgt dagelijks voor de beste zorg en begeleiding.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 animate-fade-in-up animate-delay-200">
+                        <button class="px-8 py-4 bg-purple-600 text-white rounded-xl hover:bg-purple-700 transition-all duration-300 font-medium shadow-glow hover-lift">
+                            Schrijf direct in
+                        </button>
+                        <button class="px-8 py-4 border-2 border-slate-200 text-anthracite rounded-xl hover:bg-slate-50 transition-all duration-300 font-medium">
+                            Lees onze visie
+                        </button>
+                    </div>
+                    
+                    <div class="flex items-center space-x-10 animate-fade-in-up animate-delay-400">
+                        <div>
+                            <div class="text-4xl font-extrabold text-anthracite">15+</div>
+                            <div class="text-sm text-slate-500 uppercase tracking-widest">Jaren ervaring</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-extrabold text-anthracite">98%</div>
+                            <div class="text-sm text-slate-500 uppercase tracking-widest">Tevreden ouders</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-extrabold text-anthracite">1:4</div>
+                            <div class="text-sm text-slate-500 uppercase tracking-widest">Kind-leidster ratio</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative animate-fade-in-up animate-delay-200 -mb-16 lg:-mb-32 z-10">
+                    <div class="relative aspect-square rounded-t-full rounded-b-3xl overflow-hidden shadow-soft-purple hover-lift border border-slate-100">
+                        <img src="https://images.unsplash.com/photo-1540479859555-17af45c78602?auto=format&fit=crop&q=80&w=1600" 
+                             alt="Professionele kinderopvang ruimte" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    </div>
+                    <!-- Floating Glassmorphism Card -->
+                    <div class="absolute -bottom-4 -left-4 glass-morphism rounded-2xl p-4 shadow-soft animate-float">
+                        <div class="flex items-center space-x-2">
+                            <span class="text-lg">✨</span>
+                            <div>
+                                <div class="font-semibold text-anthracite text-sm">9.5 Beoordeling</div>
+                                <div class="text-xs text-slate-600">door ouders</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium USP Section - Bento Box Layout -->
+    <section class="py-40 bg-warm-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-24">
+                <h2 class="font-display text-5xl md:text-6xl font-bold text-anthracite mb-8 animate-fade-in-up">
+                    Waarom MAMALIEF de beste keuze is
+                </h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto animate-fade-in-up animate-delay-200">
+                    Ontdek onze unieke aanpak die verschil maakt in de ontwikkeling van uw kind
+                </p>
+            </div>
+
+            <!-- Connected Bento Box Grid -->
+            <div class="grid grid-cols-12 gap-8 relative">
+                <!-- Background Watermark -->
+                <div class="absolute -bottom-20 -right-20 text-[300px] font-bold text-slate-100 opacity-5">
+                    01
+                </div>
+                
+                <!-- Large Card - Kleine groepen -->
+                <div class="col-span-12 lg:col-span-8 bg-white rounded-3xl p-10 shadow-soft hover-lift border-t-2 border-mamalief-purple/30 relative overflow-hidden">
+                    <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-mamalief-purple/5 rounded-full"></div>
+                    <div class="flex items-start space-x-6 relative z-10">
+                        <div class="w-14 h-14 bg-mamalief-purple/10 rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <svg class="w-7 h-7 text-mamalief-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-display text-2xl font-semibold text-anthracite mb-3">Kleine groepen, maximale aandacht</h3>
+                            <p class="text-slate-600 mb-4 leading-relaxed">
+                                Met maximaal 8 kinderen per pedagogisch medewerker garanderen we persoonlijke aandacht voor elk kind. Onze unieke aanpak zorgt ervoor dat geen enkel kind onopgemerkt blijft en iedereen de zorg krijgt die het verdient.
+                            </p>
+                            <div class="flex items-center space-x-6 text-sm text-slate-500">
+                                <span class="flex items-center"><span class="w-2 h-2 bg-mamalief-green rounded-full mr-2"></span>1:4 ratio baby's</span>
+                                <span class="flex items-center"><span class="w-2 h-2 bg-mamalief-green rounded-full mr-2"></span>1:8 ratio peuters</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Small Card - Natuur -->
+                <div class="col-span-12 lg:col-span-4 bg-gradient-to-br from-mamalief-green/5 to-mamalief-blue/5 rounded-3xl p-10 shadow-soft hover-lift border-t-2 border-mamalief-green/30 relative overflow-hidden">
+                    <div class="absolute -bottom-8 -right-8 w-24 h-24 bg-mamalief-green/5 rounded-full"></div>
+                    <div class="relative z-10">
+                        <div class="w-12 h-12 bg-mamalief-green/10 rounded-2xl flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-mamalief-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-display text-xl font-semibold text-anthracite mb-3">Focus op natuur</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Dagelijks buiten spelen en natuurbeleving stimuleren de zintuiglijke en motorische ontwikkeling.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Small Card - Voeding -->
+                <div class="col-span-12 md:col-span-6 lg:col-span-4 bg-white rounded-3xl p-10 shadow-soft hover-lift border-t-2 border-mamalief-yellow/30 relative overflow-hidden">
+                    <div class="absolute -bottom-8 -right-8 w-24 h-24 bg-mamalief-yellow/10 rounded-full"></div>
+                    <div class="relative z-10">
+                        <div class="w-12 h-12 bg-mamalief-yellow/20 rounded-2xl flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-anthracite" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-display text-xl font-semibold text-anthracite mb-3">Verse voeding</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Onze kok bereidt dagelijks verse maaltijden met biologische ingrediënten.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Medium Card - Flexibiliteit -->
+                <div class="col-span-12 md:col-span-6 lg:col-span-8 bg-gradient-to-br from-mamalief-blue/5 to-mamalief-purple/5 rounded-3xl p-10 shadow-soft hover-lift border-t-2 border-mamalief-blue/30 relative overflow-hidden">
+                    <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-mamalief-blue/5 rounded-full"></div>
+                    <div class="flex items-start space-x-6 relative z-10">
+                        <div class="w-12 h-12 bg-mamalief-blue/10 rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-mamalief-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-display text-xl font-semibold text-anthracite mb-3">Flexibele opvang</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Met openingstijden van 07:30 tot 18:30 en flexibele contracten passen we ons aan uw agenda aan. Ook vakantieopvang en incidentele opvang mogelijk.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Onze Groepen Section -->
+    <section id="groepen" class="py-40 bg-gradient-to-b from-warm-white to-slate-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-24">
+                <h2 class="font-display text-5xl md:text-6xl font-bold text-anthracite mb-8 animate-fade-in-up">
+                    Onze Groepen
+                </h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto animate-fade-in-up animate-delay-200">
+                    Elke leeftijdsgroep heeft zijn eigen specifieke behoeften. Onze groepen zijn zorgvuldig ingericht om de optimale ontwikkeling van uw kind te stimuleren.
+                </p>
+            </div>
+
+            <!-- Asymmetrical Grid Layout with Arch Shapes -->
+            <div class="grid lg:grid-cols-12 gap-8 relative">
+                <!-- Background Watermark -->
+                <div class="absolute -bottom-20 -right-20 text-[250px] font-bold text-slate-100 opacity-5">
+                    02
+                </div>
+                
+                <!-- Babygroep - Large Card with Arch -->
+                <div class="lg:col-span-7 bg-white rounded-3xl overflow-hidden shadow-soft hover-lift relative">
+                    <div class="relative h-64 rounded-t-full rounded-b-3xl overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544979048-ba301a6f5a8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                             alt="Babygroep" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-6 left-6">
+                            <div class="inline-flex items-center px-3 py-1 bg-mamalief-red/20 backdrop-blur-sm rounded-full text-sm font-medium text-white mb-3">
+                                0-2 jaar
+                            </div>
+                            <h3 class="font-display text-3xl font-bold text-white">Babygroep</h3>
+                        </div>
+                    </div>
+                    <div class="p-10">
+                        <h4 class="font-display text-xl font-semibold text-anthracite mb-4">Rust, ritme en geborgenheid</h4>
+                        <p class="text-slate-600 mb-6 leading-relaxed">
+                            In de babygroep staat de veilige hechting centraal. We volgen het ritme van uw kind en bieden maximale geborgenheid met veel persoonlijke aandacht.
+                        </p>
+                        <div class="grid grid-cols-3 gap-4">
+                            <div class="text-center p-4 bg-slate-50 rounded-xl">
+                                <div class="text-2xl font-bold text-mamalief-red">8</div>
+                                <div class="text-xs text-slate-600">Max. baby's</div>
+                            </div>
+                            <div class="text-center p-4 bg-slate-50 rounded-xl">
+                                <div class="text-2xl font-bold text-mamalief-red">1:4</div>
+                                <div class="text-xs text-slate-600">Ratio</div>
+                            </div>
+                            <div class="text-center p-4 bg-slate-50 rounded-xl">
+                                <div class="text-2xl font-bold text-mamalief-red">24/7</div>
+                                <div class="text-xs text-slate-600">App updates</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Peutergroep - Medium Card -->
+                <div class="lg:col-span-5 bg-gradient-to-br from-mamalief-green/5 to-mamalief-yellow/5 rounded-3xl p-10 shadow-soft hover-lift border-t-2 border-mamalief-green/30 relative overflow-hidden">
+                    <div class="absolute -bottom-8 -right-8 w-24 h-24 bg-mamalief-green/5 rounded-full"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-mamalief-green/10 rounded-2xl flex items-center justify-center mb-6">
+                            <svg class="w-7 h-7 text-mamalief-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <div class="inline-flex items-center px-3 py-1 bg-mamalief-green/20 rounded-full text-sm font-medium text-mamalief-green mb-4">
+                            2-4 jaar
+                        </div>
+                        <h3 class="font-display text-2xl font-bold text-anthracite mb-4">Peutergroep</h3>
+                        <h4 class="font-semibold text-lg mb-3">Spelend leren en VVE</h4>
+                        <p class="text-slate-600 mb-6 leading-relaxed">
+                            Peuters leren door spel en ontdekking. We bieden een rijke leeromgeving met VVE-programma's die de voorbereiding op de basisschool ondersteunen.
+                        </p>
+                        <ul class="space-y-3 text-sm text-slate-600">
+                            <li class="flex items-center"><span class="w-2 h-2 bg-mamalief-green rounded-full mr-3"></span>Voorschoolse educatie (VVE)</li>
+                            <li class="flex items-center"><span class="w-2 h-2 bg-mamalief-green rounded-full mr-3"></span>Thematische projecten</li>
+                            <li class="flex items-center"><span class="w-2 h-2 bg-mamalief-green rounded-full mr-3"></span>Voorbereiding op school</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- BSO - Full Width Card with Arch -->
+                <div class="lg:col-span-12 bg-gradient-to-r from-mamalief-blue/5 to-mamalief-purple/5 rounded-3xl p-10 shadow-soft hover-lift border-t-2 border-mamalief-blue/30 relative overflow-hidden">
+                    <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-mamalief-blue/5 rounded-full"></div>
+                    <div class="grid lg:grid-cols-2 gap-8 items-center relative z-10">
+                        <div>
+                            <div class="inline-flex items-center px-3 py-1 bg-mamalief-blue/20 rounded-full text-sm font-medium text-mamalief-blue mb-4">
+                                4-12 jaar
+                            </div>
+                            <h3 class="font-display text-3xl font-bold text-anthracite mb-4">BSO</h3>
+                            <h4 class="font-semibold text-xl mb-4">Naschoolse activiteiten en ontspanning</h4>
+                            <p class="text-slate-600 mb-6 leading-relaxed">
+                                Na een lange schooldag bieden we een perfecte mix van ontspanning en uitdagende workshops. Kinderen kunnen zelf kiezen uit diverse activiteiten.
+                            </p>
+                            <div class="grid grid-cols-3 gap-4 mb-6">
+                                <div class="text-center p-3 bg-white/50 rounded-xl">
+                                    <div class="text-lg font-bold text-mamalief-blue">Workshops</div>
+                                </div>
+                                <div class="text-center p-3 bg-white/50 rounded-xl">
+                                    <div class="text-lg font-bold text-mamalief-blue">Huiswerk</div>
+                                </div>
+                                <div class="text-center p-3 bg-white/50 rounded-xl">
+                                    <div class="text-lg font-bold text-mamalief-blue">Vakantie</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative">
+                            <div class="aspect-square rounded-t-full rounded-b-3xl overflow-hidden shadow-soft">
+                                <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&q=80&w=800" 
+                                     alt="BSO activiteiten" 
+                                     class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Social Proof Section -->
+    <section class="py-32 bg-warm-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-anthracite mb-6 animate-fade-in-up">
+                    Wat ouders zeggen
+                </h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto animate-fade-in-up animate-delay-200">
+                    Ervaringen van ouders die u voorgingen bij MAMALIEF KINDERCENTRUM
+                </p>
+            </div>
+
+            <!-- Premium Testimonial Grid -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-3xl p-8 shadow-soft hover-lift border-t-2 border-mamalief-purple/30">
+                    <div class="flex items-center mb-6">
+                        <div class="w-14 h-14 bg-gradient-to-br from-mamalief-purple to-mamalief-pink rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+                            J
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-anthracite">Jansen familie</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 italic leading-relaxed mb-4">
+                        "De professionaliteit van de leidsters is outstanding. Onze dochter gaat elke dag met een glimlach naar de opvang. De locatie is prachtig en altijd schoon. We voelen ons echt welkom!"
+                    </p>
+                    <div class="flex items-center text-sm text-slate-500">
+                        <svg class="w-4 h-4 mr-2 text-mamalief-green" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                        Geverifieerde ouder
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-mamalief-green/5 to-mamalief-blue/5 rounded-3xl p-8 shadow-soft hover-lift border-t-2 border-mamalief-green/30">
+                    <div class="flex items-center mb-6">
+                        <div class="w-14 h-14 bg-gradient-to-br from-mamalief-green to-mamalief-blue rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+                            D
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-anthracite">De Vries</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                ⭐⭐⭐⭐
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 italic leading-relaxed mb-4">
+                        "We hebben veel kinderopvanglocaties bezocht, maar MAMALIEF is echt anders. De aandacht voor detail, de warmte en de professionele aanpak maken het verschil. Absoluut een aanrader!"
+                    </p>
+                    <div class="flex items-center text-sm text-slate-500">
+                        <svg class="w-4 h-4 mr-2 text-mamalief-green" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                        Geverifieerde ouder
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl p-8 shadow-soft hover-lift border-t-2 border-mamalief-blue/30">
+                    <div class="flex items-center mb-6">
+                        <div class="w-14 h-14 bg-gradient-to-br from-mamalief-blue to-mamalief-purple rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+                            B
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-anthracite">Bakker ouders</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                ⭐⭐⭐⭐
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 italic leading-relaxed mb-4">
+                        "De communicatie via de app is fantastisch. We krijgen dagelijks updates en foto's. De flexibiliteit in opvangtijden is voor ons als werkende ouders echt goud waard."
+                    </p>
+                    <div class="flex items-center text-sm text-slate-500">
+                        <svg class="w-4 h-4 mr-2 text-mamalief-green" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                        Geverifieerde ouder
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Call to Action -->
+    <section class="py-24 bg-gradient-to-br from-slate-50 to-warm-white">
+        <div class="max-w-5xl mx-auto px-6 lg:px-8 text-center">
+            <div class="bg-white rounded-3xl p-12 shadow-soft border border-slate-100">
+                <div class="w-20 h-20 bg-mamalief-purple/10 rounded-3xl flex items-center justify-center mx-auto mb-8">
+                    <svg class="w-10 h-10 text-mamalief-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                    </svg>
+                </div>
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-anthracite mb-6">
+                    Kom de sfeer proeven
+                </h2>
+                <p class="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
+                    Ontvang een persoonlijke rondleiding en ervaar zelf waarom MAMALIEF KINDERCENTRUM de beste keuze is voor uw kind
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="px-8 py-4 bg-purple-600 text-white rounded-xl hover:bg-purple-700 transition-all duration-300 font-medium shadow-lg shadow-purple-500/30 hover-lift">
+                        Vraag vrijblijvend een rondleiding aan
+                    </button>
+                    <button class="px-8 py-4 border-2 border-slate-200 text-anthracite rounded-xl hover:bg-slate-50 transition-all duration-300 font-medium">
+                        Download onze brochure
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Footer -->
+    <footer class="bg-anthracite text-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+            <div class="grid md:grid-cols-4 gap-12">
+                <!-- Contact -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="flex">
+                            <div class="w-5 h-5 bg-mamalief-red rounded-sm flex items-center justify-center text-white font-bold text-xs">M</div>
+                            <div class="w-5 h-5 bg-mamalief-green rounded-sm flex items-center justify-center text-white font-bold text-xs -ml-1">A</div>
+                            <div class="w-5 h-5 bg-mamalief-blue rounded-sm flex items-center justify-center text-white font-bold text-xs -ml-1">M</div>
+                            <div class="w-5 h-5 bg-mamalief-yellow rounded-sm flex items-center justify-center text-anthracite font-bold text-xs -ml-1">A</div>
+                            <div class="w-5 h-5 bg-mamalief-purple rounded-sm flex items-center justify-center text-white font-bold text-xs -ml-1">L</div>
+                            <div class="w-5 h-5 bg-mamalief-red rounded-sm flex items-center justify-center text-white font-bold text-xs -ml-1">I</div>
+                            <div class="w-5 h-5 bg-mamalief-yellow rounded-sm flex items-center justify-center text-anthracite font-bold text-xs -ml-1">E</div>
+                            <div class="w-5 h-5 bg-mamalief-purple rounded-sm flex items-center justify-center text-white font-bold text-xs -ml-1">F</div>
+                        </div>
+                        <span class="font-display text-lg font-semibold">MAMALIEF</span>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold mb-6">Contact</h3>
+                    <div class="space-y-3 text-white/80">
+                        <p>Hoofdstraat 123</p>
+                        <p>1234 AB Utrecht</p>
+                        <p>T: 030 - 123 4567</p>
+                        <p>E: info@mamalief.nl</p>
+                    </div>
+                </div>
+
+                <!-- Snelle links -->
+                <div>
+                    <h3 class="font-display text-xl font-semibold mb-6">Snelle links</h3>
+                    <ul class="space-y-3 text-white/80">
+                        <li><a href="#" class="hover:text-mamalief-yellow transition-colors">Over Ons</a></li>
+                        <li><a href="#" class="hover:text-mamalief-yellow transition-colors">Onze Groepen</a></li>
+                        <li><a href="#" class="hover:text-mamalief-yellow transition-colors">Visie & Beleid</a></li>
+                        <li><a href="#" class="hover:text-mamalief-yellow transition-colors">Tarieven</a></li>
+                        <li><a href="#" class="hover:text-mamalief-yellow transition-colors">Vacatures</a></li>
+                    </ul>
+                </div>
+
+                <!-- Openingstijden -->
+                <div>
+                    <h3 class="font-display text-xl font-semibold mb-6">Openingstijden</h3>
+                    <div class="space-y-2 text-white/80">
+                        <p>Maandag - Vrijdag</p>
+                        <p class="font-semibold text-lg">07:30 - 18:30</p>
+                        <p class="text-sm mt-4">Zaterdag & Zondag</p>
+                        <p class="text-sm">Gesloten</p>
+                    </div>
+                </div>
+
+                <!-- Nieuwsbrief -->
+                <div>
+                    <h3 class="font-display text-xl font-semibold mb-6">Blijf op de hoogte</h3>
+                    <p class="text-white/80 mb-6">Ontvang nieuws en updates over MAMALIEF KINDERCENTRUM</p>
+                    <div class="flex flex-col space-y-3">
+                        <input type="email" placeholder="Uw e-mailadres" class="px-4 py-3 rounded-xl text-anthracite bg-white/10 border border-white/20 placeholder-white/60 focus:outline-none focus:border-mamalief-purple">
+                        <button class="px-6 py-3 bg-mamalief-purple text-white rounded-xl hover:bg-opacity-90 transition-colors font-medium">
+                            Inschrijven
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Onderste balk -->
+        <div class="border-t border-white/20">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 py-8">
+                <div class="flex flex-col md:flex-row justify-between items-center text-white/60 text-sm">
+                    <div class="mb-4 md:mb-0">
+                        <span>LRK-nummer: 123456789</span> | 
+                        <span>KVK: 01234567</span>
+                    </div>
+                    <div class="flex space-x-8">
+                        <a href="#" class="hover:text-white transition-colors">Privacybeleid</a>
+                        <a href="#" class="hover:text-white transition-colors">Algemene Voorwaarden</a>
+                        <span>© 2026 MAMALIEF KINDERCENTRUM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
